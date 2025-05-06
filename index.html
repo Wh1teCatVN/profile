@@ -227,35 +227,27 @@ Huge fan of lyrical rap.
 
     <script src="script.js"></script>
 <script>
-  // Chặn chuột phải
+  // ❌ Vô hiệu hóa chuột phải (không redirect)
   document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
-    window.location.href = "https://www.facebook.com/N1ghtClaw";
   });
 
-  // Chặn các tổ hợp phím
+  // 🚫 Chặn các tổ hợp phím và chuyển hướng
   document.addEventListener('keydown', function (e) {
-    // F12, Ctrl+Shift+I, Ctrl+Shift+C, Ctrl+U, Ctrl+S
+    const key = e.key.toLowerCase();
+    const isCtrl = e.ctrlKey;
+    const isShift = e.shiftKey;
+
     if (
-      e.key === 'F12' ||
-      (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C' || e.key === 'J')) ||
-      (e.ctrlKey && (e.key === 'U' || e.key === 'S'))
+      e.key === 'F12' ||                                 // F12
+      (isCtrl && isShift && ['i', 'c', 'j'].includes(key)) || // Ctrl+Shift+I/C/J
+      (isCtrl && ['u', 's'].includes(key))               // Ctrl+U/S
     ) {
       e.preventDefault();
       window.location.href = "https://www.facebook.com/N1ghtClaw";
     }
   });
-
-  // Phát hiện mở DevTools (ẩn danh, không chính thức)
-  setInterval(function () {
-    const devtools = /./;
-    devtools.toString = function () {
-      window.location.href = "https://www.facebook.com/N1ghtClaw";
-    };
-    console.log('%c', devtools);
-  }, 1000);
 </script>
-
   </body>
 <div class="footer-note">
   © 2025 N1ghtClaw. All rights reserved. nhận code web riêng, bán host web giá rẻ. liên hệ discord: N1ghtClaw để thương lượng về giá
