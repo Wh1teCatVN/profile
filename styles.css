@@ -1,0 +1,407 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #101c2e;
+  color: #e0f7ff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+#sakura-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.sakura {
+  position: absolute;
+  width: 20px;
+  height: auto;
+  opacity: 0.8;
+  animation: sakuraFall 4s linear infinite;
+}
+
+@keyframes sakuraFall {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+.container {
+  display: flex;
+  padding: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.sidebar {
+  width: 25%;
+  padding: 20px;
+  background-color: rgba(10, 20, 30, 0.8);
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.banner {
+  position: relative;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+.avatar {
+  position: absolute;
+  bottom: -40px;
+  left: 35%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.avatar img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 4px solid #00ccff;
+  background: #0b1e2e;
+}
+
+.info {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 0.95rem;
+}
+
+.info h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.info p {
+  font-size: 1rem;
+  color: #ddd;
+  margin: 5px 0;
+}
+
+.profile-links {
+  margin-top: 20px;
+}
+
+.social-icons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  margin: 0 10px;
+}
+
+.social-icons a.youtube {
+  color: #FF0000;
+}
+
+.social-icons a.instagram {
+  color: #E1306C;
+}
+
+.social-icons a.twitter {
+  color: #1DA1F2;
+}
+
+.social-icons a.facebook {
+  color: #4267B2;
+}
+
+.personal-links {
+  text-align: center;
+}
+
+.personal-links h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.personal-links ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+  padding: 0;
+}
+
+.personal-links a {
+  color: #90dfff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  max-width: 100%;
+  text-align: center;
+  flex-shrink: 1;
+}
+
+.personal-links a i {
+  margin-right: 5px;
+  font-size: 1.2rem;
+}
+
+.about {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.about h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.about p {
+  font-size: 0.9rem;
+  color: #d0eaff;
+  line-height: 1.5;
+}
+
+main {
+  width: 70%;
+  padding: 20px;
+}
+
+main section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+main section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+main section h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+}
+
+main section p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #d0eaff;
+  margin-bottom: 15px;
+}
+
+#gear {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+#gear .gear-item {
+  flex: 1 1 calc(50% - 20px);
+  max-width: 300px;
+  text-align: center;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+#gear .gear-item:hover {
+  transform: scale(1.05);
+}
+
+#gear .gear-item img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+#gear .gear-item p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.pc-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.pc-spec {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.pc-spec ul {
+  list-style: none;
+  padding-left: 10px;
+}
+
+.pc-spec li {
+  margin-bottom: 5px;
+}
+
+.pc-config {
+  flex-basis: 300px;
+  text-align: center;
+}
+
+.pc-config h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.download-btn {
+  background: linear-gradient(45deg, #00ccff, #0066cc);
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-top: 10px;
+}
+
+.download-btn:hover {
+  background: linear-gradient(45deg, #0077ff, #005bb5);
+  transform: translateY(-3px);
+}
+
+#ranks {
+  margin-top: 20px;
+}
+
+#ranks .rank-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+#ranks .rank-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+}
+
+#ranks .rank-item img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+#ranks .rank-item span {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .sidebar,
+  main {
+    width: 100%;
+  }
+
+  .avatar {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    margin-top: -60px;
+    margin-bottom: 20px;
+  }
+
+  .personal-links ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .about h2 {
+    font-size: 1.6rem;
+  }
+
+  .about p {
+    font-size: 0.9rem;
+  }
+}
