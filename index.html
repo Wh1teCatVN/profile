@@ -226,5 +226,39 @@ Huge fan of lyrical rap.
     </div>
 
     <script src="script.js"></script>
+<script>
+  // Chặn chuột phải
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+    window.location.href = "https://www.facebook.com/N1ghtClaw";
+  });
+
+  // Chặn các tổ hợp phím
+  document.addEventListener('keydown', function (e) {
+    // F12, Ctrl+Shift+I, Ctrl+Shift+C, Ctrl+U, Ctrl+S
+    if (
+      e.key === 'F12' ||
+      (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C' || e.key === 'J')) ||
+      (e.ctrlKey && (e.key === 'U' || e.key === 'S'))
+    ) {
+      e.preventDefault();
+      window.location.href = "https://www.facebook.com/N1ghtClaw";
+    }
+  });
+
+  // Phát hiện mở DevTools (ẩn danh, không chính thức)
+  setInterval(function () {
+    const devtools = /./;
+    devtools.toString = function () {
+      window.location.href = "https://www.facebook.com/N1ghtClaw";
+    };
+    console.log('%c', devtools);
+  }, 1000);
+</script>
+
   </body>
+<div class="footer-note">
+  © 2025 N1ghtClaw. All rights reserved. nhận code web riêng, bán host web giá rẻ. liên hệ discord: N1ghtClaw để thương lượng về giá
+</div>
+
 </html>
